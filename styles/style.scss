@@ -1,0 +1,240 @@
+$violetmoderade: hsl(263, 55%, 52%);
+$grayblue: hsl(217, 19%, 35%);
+$blackblue:hsl(219, 29%, 14%);
+$lightgray:hsl(0, 0%, 81%);
+$lightgrayblue:hsl(210, 46%, 95%);
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: $lightgrayblue;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    height: 100vh;
+
+}
+
+.container {
+    width: 320px;
+    margin: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+
+
+
+.cards{
+    margin: 10px auto;
+    width: 100%;
+    // border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 39px 38px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px  $lightgray;
+    &:nth-child(1) .title img{
+        border: 2px solid white;
+    }
+    &:nth-child(2) .title img,&:nth-child(3) .title img,&:nth-child(5) .title img{
+        border: 2px solid white;
+    }
+    &:nth-child(4) .title img{
+        border: 2px solid violet;
+    }
+}
+.card1{
+    background-color: $violetmoderade;
+    color: white;
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: 210px top;
+}
+.card2{
+    background-color: $grayblue;
+    color: white;
+    p{
+        color: white;
+        opacity: 0.5;
+    }
+}
+.card3,.card5{
+    color: $grayblue;
+    background-color: #fff;
+    p{
+        color: $blackblue;
+        opacity: 0.7;
+    }
+}
+.card4{
+    color: white;
+    background-color: $blackblue;
+}
+.title{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    .containerimg{
+        display: inline-block;
+ 
+        img{
+            border: 5px solid black;
+            border-radius: 50%;
+            width: 40px;
+        }
+    }
+    h1{
+        grid-column: 2/-1;
+        margin-left: 16px;
+        align-self: flex-start;
+        font-weight: 600;
+        font-size: 15px;
+        span{
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.5;
+        }
+    }
+    
+}
+
+
+.description{
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    font-size: 22px;
+    text-align: start;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 13px;
+}
+
+p{
+    color: $lightgray;
+    opacity: 0.6;
+    font-weight: 500;
+    padding: 20px 0 14px;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 11px;
+    text-align: center;
+
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+@media screen and (min-width: 768px){
+    .container{
+        width: 680px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 350px 350px auto;
+        column-gap: 23px;
+
+    }
+    .card1{
+        grid-column: 1/2;
+        grid-row: 1/3;
+        background-size: 110px;
+    }
+    .card2{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        padding: 20px;
+    }
+    .attribution{
+        grid-column: 1/-1;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    
+    .container{
+        width: 800px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-rows: 1fr 1fr 1fr;
+
+    }
+    .card1{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .card2{
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .card3{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .card4{
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+    .card5{
+        grid-column: 1/4;
+        grid-row: 3/4;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .container{
+        width: 1240px;
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+    .card1{
+        background-position: 400px 0;
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .card2{
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .card3{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .card5{
+        grid-column: 4/5;
+        grid-row: 1/3;
+    }
+    
+}
